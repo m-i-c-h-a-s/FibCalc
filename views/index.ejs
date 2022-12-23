@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+    <script type="text/javascript" src="../script.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">FibCalc</td>
+        </tr>
+        <tr>
+            <td>Autor</td>
+            <td>Michał Pojęta</td>
+        </tr>
+        <tr>
+            <td>Grupa dziekańska</td>
+            <td>I2S 2.4</td>
+        </tr>
+    </table>
+
+    <div>
+        <p>Podaj, który element Ciągu Fibonacciego chcesz obliczyć: </p>
+        <input type="number" name="elementNumber" id="elementNumber" min="0">
+        <button onclick="calculate()">Oblicz</button>
+    </div>
+
+    <div>
+        <p id="resultField"></p>
+    </div>
+</body>
+</html>
+
+<style>
+    tr, td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
