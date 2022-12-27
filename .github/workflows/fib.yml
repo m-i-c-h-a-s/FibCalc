@@ -50,12 +50,11 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v3
-        id: docker_build
         with:
           cache-from: type=registry,ref=docker.io/michas12/zadanie_1:cache
           cache-to: type=registry,ref=docker.io/michas12/zadanie_1:cache,mode=max
           platforms: linux/amd64,linux/arm64
           context: .
-          push: true
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
