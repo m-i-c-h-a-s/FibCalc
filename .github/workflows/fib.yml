@@ -42,7 +42,8 @@ jobs:
           images: |
             michas12/zadanie_1
             ghcr.io/${{ github.repository }}
-          tags: latest
+          tags: |
+            type=semver,pattern={{major}}.{{minor}}
 
       - name: Build and push
         uses: docker/build-push-action@v3
