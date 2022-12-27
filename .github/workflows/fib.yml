@@ -8,6 +8,7 @@ on:
 
 jobs:
   build-push-images:
+    name: Build and push images to repo
     runs-on: ubuntu-20.04
 
     steps:
