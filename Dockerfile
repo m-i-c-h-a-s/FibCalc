@@ -1,4 +1,4 @@
-FROM redis:alpine
+FROM node:alpine
 
 WORKDIR '/'
 
