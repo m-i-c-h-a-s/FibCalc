@@ -39,8 +39,8 @@ jobs:
         id: meta
         with:
           images: |
-            ghcr.io/${{ github.repository }}
             michas12/zadanie_1
+            ghcr.io/${{ github.repository }}
           tags: |
             type=ref,event=branch
             type=ref,event=pr
