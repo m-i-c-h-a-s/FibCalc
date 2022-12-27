@@ -28,7 +28,7 @@ jobs:
           username: ${{secrets.DOCKER_HUB_USERNAME}}
           password: ${{secrets.DOCKER_HUB_ACCESS_TOKEN}}
 
-      - name: Login to registry
+      - name: Login to gh container registry
         uses: docker/login-action@v2
         with:
           username: ${{ github.actor }}
@@ -42,11 +42,7 @@ jobs:
           images: |
             michas12/zadanie_1
             ghcr.io/${{ github.repository }}
-          tags: |
-            type=ref,event=branch
-            type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+          tags: latest
 
       - name: Build and push
         uses: docker/build-push-action@v3
