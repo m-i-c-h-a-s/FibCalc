@@ -7,7 +7,6 @@ on:
       - 'v*'
 
 jobs:
-  build-push-images:
     runs-on: ubuntu-20.04
 
     steps:
@@ -53,7 +52,7 @@ jobs:
         with:
           cache-from: type=registry,ref=docker.io/michas12/zadanie_1:cache
           cache-to: type=registry,ref=docker.io/michas12/zadanie_1:cache,mode=max
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64/v8
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
